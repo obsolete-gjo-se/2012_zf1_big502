@@ -1,0 +1,146 @@
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) Template for designing a screen layout
+ * (de) Gestaltungsvorlage für die Erstellung eines Screenlayouts
+ *
+ * @copyright       Copyright 2005-2010, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.3
+ * @revision        $Revision:392 $
+ * @lastmodified    $Date:2009-07-05 12:18:40 +0200 (So, 05. Jul 2009) $
+ */
+
+@media screen, projection {
+ /**
+  * Gestaltung des YAML Basis-Layouts
+  *
+  * @section layout-basics
+  */
+
+  /* Erzwingen vertikaler Scrollbalken und Randbereiche & Seitenhintergrund */
+body {
+	overflow-y:scroll;
+	background:#404347 url(/mimes/images/bg_body.gif) repeat-x top;
+	padding:10px 0;
+	text-align:center;
+}
+/* Layout:Breite, Hintergrund, Rahmen */
+.page_margins {
+	text-align:left;
+	margin:0 auto;
+	min-width:740px;
+	max-width:80em;
+}
+.page {
+	padding:0;
+	background:#fff
+}
+/* Gestaltung der Hauptelemente des Layouts */
+#topnav {
+	position:static;
+	background:#000 url(/mimes/images/bg_head.gif) repeat-x bottom;
+	text-align:left;
+	border-bottom:1px #000 solid;
+	overflow:hidden;
+	padding:2px 20px;
+	font-size:83,33%;
+	color:#CCC;
+}
+#topnav .langMenu {
+	float:right
+}
+#topnav .langMenu a {
+	float:left;
+	margin-right:.5em;
+	color:#CCC
+}
+#topnav .langMenu a:hover {
+	color:#FFF
+}
+#topnav .langMenu span.text {
+	float:left;
+	margin-right:.5em;
+	color:#FFF
+}
+#topnav .langMenu span.text2 {
+	float:left;
+	margin-right:.5em
+}
+#topnav .langMenu span.textOff {
+	float:left;
+	margin-right:.5em;
+	color:#666
+}
+#header {
+	height:90px;
+	color:#fff;
+	background:#000 url(/mimes/images/bg_logo.gif) repeat-x top;
+	overflow:hidden
+}
+#main {
+}
+#footer {
+}
+/*------------------------------------------------------------------------------------------------------*/
+
+ /**
+  * Formatting of the Content Area | Formatierung der Inhaltsbereichs
+  *
+  * @section layout-main
+  */
+
+  #col1 {
+}
+#col1_content {
+}
+#col2 {
+}
+#col2_content {
+}
+#col3 {
+}
+#col3_content {
+}
+/*------------------------------------------------------------------------------------------------------*/
+
+ /**
+  * Design of Additional Layout Elements | Gestaltung weiterer Layoutelemente
+  *
+  * @section layout-misc
+  */
+.hideboth #col3 { margin-left: 0; margin-right: 0; }
+.hideboth #col3_content{ padding-left: 20px; padding-right: 20px; }
+
+.hidecol1 #col3 { margin-left: 0; margin-right: 25%; }
+.hidecol1 #col3_content{ padding-left: 20px; }
+
+.hidecol2 #col3 { margin-left: 25%; margin-right: 0; }
+.hidecol2 #col3_content{ padding-right: 20px; }
+
+.hideboth #col1, .hideboth #col2, .hidecol1 #col1, .hidecol2 #col2 { display:none; }
+  
+  
+ /**
+  * ------------------------------------------------------------------------------------------------- #
+  *
+  * Skiplinks 
+  *
+  * (en) Visual styling for skiplink navigation
+  * (de) Visuelle Gestaltung der Skiplink-Navigation
+  *
+  * @section content-skiplinks
+  */
+  
+  #skiplinks a.skip:focus,
+ #skiplinks a.skip:active {
+	color:#fff;
+	background:#333;
+	border-bottom:1px #000 solid;
+	padding:10px 0;
+	text-decoration:none;
+}
+}

@@ -1,0 +1,48 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Actions</h1>
+      </div>
+
+      <div class="content">
+        <table>
+                    <?php if (count($this->actions)) { ?>
+                    	<thead>
+            <tr>
+              <th>Name</th>
+              <th>Name in Dash</th>
+              <th>Controller</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                            <?php foreach ($this->actions as $action) { ?>
+                                <tr>
+              <td><?php echo $action->name ?></td>
+              <td><?php $filterChain = new Zend_Filter();
+                            $filterChain->addFilter(new Zend_Filter_Word_CamelCaseToDash())->addFilter(
+                                    new Zend_Filter_StringToLower());
+                                    echo $filterChain->filter($action->name); ?></td>
+ 
+              <td><?php echo $action->resourceController->name ?></td>
+              <td><?php echo $action->description ?></td>
+              <td>
+                <ul>
+                  <li><a
+                    href="<?php echo $this->url(array(), 'action-update'). '/' . $action->id ?>">Update</a></li>
+                  <li><a
+                    href="<?php echo $this->url(array(), 'action-delete'). '/' . $action->id ?>">Delete</a></li>
+                </ul>
+              </td>
+            </tr>
+                            <?php } ?>
+                        </tbody>
+                    <?php } ?>
+                </table>
+      </div>
+    </div>
+  </div>
+</div>

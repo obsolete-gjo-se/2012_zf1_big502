@@ -1,0 +1,50 @@
+<?php
+echo $this->doctype();
+?>
+
+<html>
+<head>
+    	<?php echo $this->headMeta(); ?>
+    	
+        <?php echo $this->headTitle(); ?>
+        
+    </head>
+
+<body>
+  <div id="nav">
+        <?php echo $this->partial('partials/NavPartial.phtml') . "\n";?>
+        <?php echo $this->partial('partials/NavAdminPartial.phtml') . "\n"?>
+      </div>
+  <div id="page">
+    <div >
+            	<?php $request = Zend_Controller_Front::getInstance()->getRequest(); ?>            	
+            	<dl>
+        <dt>Modul</dt>
+        <dd><?php echo $request->getModuleName(); ?></dd>
+        <dt>Controller</dt>
+        <dd><?php echo $request->getControllerName(); ?></dd>
+        <dt>Aktion</dt>
+        <dd><?php echo $request->getActionName(); ?></dd>
+            		<?php
+            $params = $request->getParams();
+            foreach ($params as $key => $value) {
+                switch ($key) {
+                    case 'module':
+                    case 'controller':
+                    case 'action':
+                        continue;
+                    default:
+                        ?>
+					<dt><?php echo $key; ?></dt>
+        <dd><?php // echo $value; ?></dd>
+	<?php
+                }
+            }
+            ?>
+            	</dl>
+    </div>
+  </div>
+<?php echo $this->layout()->content; ?>
+
+</body>
+</html>

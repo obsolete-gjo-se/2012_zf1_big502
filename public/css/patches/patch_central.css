@@ -1,0 +1,12 @@
+/* Layout-unabhängige Anpassungen */
+@IMPORT url(/css/yaml/iehacks.css);
+
+/* Box-Modell-Anpassungen für vlist-Navigation */
+@IMPORT url(/patches/patch_nav_vlist.css);
+
+/* Layout-abhängige Anpassungen */
+@media screen, projection
+{
+  /* Fügen Sie Ihre Anpassungen hier ein */
+
+}

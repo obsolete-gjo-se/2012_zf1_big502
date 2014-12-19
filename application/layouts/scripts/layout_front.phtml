@@ -1,0 +1,45 @@
+<?php echo $this->doctype() . "\n"; ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<?php echo $this->headTitle() . "\n"; ?>
+<?php echo $this->headMeta() . "\n"; ?>
+<?php echo $this->headLink() . "\n";?>
+<?php echo $this->headScript() . "\n"; ?>
+  <base href="<?php echo $this->baseUrlHelper(); ?>" />
+</head>
+
+<body class="hideboth">
+<?php echo $this->partial('partials/SkiplinkPartial.phtml') . "\n";?>
+  <div class="page_margins">
+    <div class="page">
+      <div id="header">
+        <?php echo $this->partial('partials/HeaderPartial.phtml') . "\n";?>
+      </div>
+      <div id="nav">
+        <?php echo $this->partial('partials/NavPartial.phtml') . "\n";?>
+      </div>
+      <div id="main">
+        <div id="col1">
+          <div id="col1_content" class="clearfix"></div>
+        </div>
+        <div id="col2">
+          <div id="col2_content" class="clearfix"></div>
+        </div>
+        <div id="col3">
+          <div id="col3_content" class="clearfix">
+            <?php echo $this->layout()->content?>
+          </div>
+          <div id="ie_clearing">&nbsp;</div>
+        </div>
+      </div>
+      <div id="footer">
+        <?php echo $this->partial('partials/FooterPartial.phtml') . "\n";?>
+      </div>
+    </div>
+  </div>
+  <div id="scriptfooter">
+    <?php echo $this->partial('partials/ScriptfooterPartial.phtml') . "\n";?>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/**
+ * @revision        $Revision:302 $
+ * @lastmodified    $Date:2008-12-14 11:23:55 +0100 (So, 14. Dez 2008) $
+ */
+
+/*--------------------------------------------------MEDIA PRINT----------------------------------------------------*/
+@media print
+{
+ /* --- Wechsel der der Schriftgrößen-Maßheinheit zu [pt] - Probleme mit [px] in Gecko-basierten Browsern vermeiden */
+  body { font-size:10pt; }
+
+  /* --- Für den Druck nicht benötigte Container des Layouts abschalten ------------------------- */
+  #topnav, #nav, #search, nav { display:none; }
+
+  /* --- Vermeidung von Seitenumbrüchen direkt nach einer Überschrift --------------------------- */
+  h1,h2,h3,h4,h5,h6 { page-break-after:avoid; }
+
+  /* --- Ausgabe von Auszeichnung von Abkürzungen ----------------------------------------------- */
+    abbr[title]:after, 
+    acronym[title]:after { content:'(' attr(title) ')'; }
+
+  /* --- Ausgabe der URLs von Hyperlinks -------------------------------------------------------- */
+  a[href]:after {
+    content:" <URL:"attr(href)">";
+    color:#444;
+    background:inherit;
+    font-style:italic;
+  }
+}

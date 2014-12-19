@@ -1,0 +1,40 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Files</h1>
+      </div>
+
+      <div class="content">
+        <table>
+                    <?php if (count($this->files)) { ?>
+                    	<thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Codierung</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                            <?php foreach ($this->files as $file) { ?>
+                                <tr>
+              <td><?php echo $file->id ?></td>
+              <td><?php echo $file->name ?></td>
+              <td><?php echo $file->code ?></td>
+              <td class="tc last">
+                <ul class="actions">
+                 <li><a
+                    href="<?php echo $this->url(array(), 'file-update'). '/' . $file->id ?>">Update</a></li>
+                </ul>
+              </td>
+            </tr>
+                            <?php } ?>
+                        </tbody>
+                    <?php } ?>
+                </table>
+            </div>
+    </div>
+  </div>
+</div>

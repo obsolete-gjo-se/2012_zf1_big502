@@ -1,0 +1,39 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Rules</h1>
+      </div>
+
+      <div class="content">
+        <table>
+                    <?php if (count($this->rules)) { ?>
+                    	<thead>
+            <tr>
+              <th>Module</th>
+              <th>Controller</th>
+              <th>Action-ID</th>
+              <th>Action</th>
+              <th>Role</th>
+              <th>Allowed</th>
+            </tr>
+          </thead>
+
+          <tbody>
+        <?php foreach ($this->rules as $rule) { ?>
+            <tr>
+              <td><?php echo $rule->resourceAction->resourceController->module ?></td>
+              <td><?php echo $rule->resourceAction->resourceController->name ?></td>
+              <td><?php echo $rule->resourceAction->id ?></td>
+              <td><?php echo $rule->resourceAction->name ?></td>
+              <td><?php echo $rule->role->name ?></td>
+              <td><?php echo $this->tickHelper($rule->allow) ?></td>
+            </tr>
+                <?php } ?>
+            </tbody>
+        <?php } ?>
+    </table>
+      </div>
+    </div>
+  </div>
+</div>

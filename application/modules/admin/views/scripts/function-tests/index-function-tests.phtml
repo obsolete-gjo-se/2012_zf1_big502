@@ -1,0 +1,47 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Controllers</h1>
+      </div>
+
+      <div class="content">
+        <table>
+                    <?php if (count($this->functionTests)) { ?>
+                    	<thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                            <?php foreach ($this->functionTests as $test) { ?>
+                                <tr>
+              <td><?php echo $test->id ?></td>
+              <td><?php echo $test->name ?></td>
+              <td><?php echo $test->descr ?></td>
+              <td class="tc last">
+                <ul class="actions">
+                  <li><a
+                    href="<?php echo $this->url(array(), 'functionTest-update'). '/' . $test->id ?>">Update</a></li>
+                  <li><a
+                    href="<?php echo $this->url(array(), 'functionTest-delete'). '/' . $test->id ?>">Delete</a></li>
+                </ul>
+              </td>
+            </tr>
+                            <?php } ?>
+                        </tbody>
+                    <?php } ?>
+                </table>
+                <?php
+                // echo $this->paginationControl($this->flags,
+                // 'Sliding',
+                // 'partials/pagination.phtml');
+                ?>
+            </div>
+    </div>
+  </div>
+</div>

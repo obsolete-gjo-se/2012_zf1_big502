@@ -1,0 +1,24 @@
+<phpunit bootstrap="./application/bootstrap.php" colors="true">
+
+	<testsuite name="Admin/Controllers">
+		<directory>./application/modules/admin/controllers/</directory>
+	</testsuite>
+
+	<filter>
+		<whitelist>
+			<directory suffix=".php">../application/</directory>
+			<exclude>
+				<directory suffix=".phtml">../application/</directory>
+				<file>../application/bootstrap.php</file>
+				<file>../application/admin/controllers/ErrorController.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+
+	<logging>
+		<log type="coverage-html" target="./log/report" charset="UTF-8"
+			yui="true" highlight="true" lowUpperBound="50" highLowerBound="80" />
+		<log type="testdox-html" target="./log/testdox.html" />
+	</logging>
+
+</phpunit>

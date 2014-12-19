@@ -1,0 +1,74 @@
+<div class="hlist">
+  <h3>Navigation Admin</h3>
+  <ul>
+    <li>Allgemeine Informationen
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'admin'); ?>">Home</a></li>
+        <li><?php echo $this->loggedInUserHelper(); ?></li>
+        <li><a href="<?php echo $this->url(array(), 'phpinfo'); ?>">phpinfo</a></li>
+        <li><a href="<?php echo $this->url(array(), 'session-test'); ?>">Session-Test</a></li>
+        <li><a href="<?php echo $this->url(array(), 'files'); ?>">Files</a>
+          <ul>
+            <li><a href="<?php echo $this->url(array(), 'store-files'); ?>">StoreFiles</a></li>
+          </ul></li>
+      </ul>
+    </li>
+
+    <li>Sitemap
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'sitemap'); ?>">Sitemap</a></li>
+        <li><a href="<?php echo $this->url(array(), 'site-create'); ?>">Create New Site</a></li>
+        <li><a href="<?php echo $this->url(array(), 'sitemap-functiontests'); ?>">Sitemap + FunctionTests</a></li>
+      </ul>
+    </li>
+
+    <li>Controller
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'controller'); ?>">Controller</a></li>
+        <li><a href="<?php echo $this->url(array(), 'controller-create'); ?>">Create New Controller</a></li>
+      </ul>
+    </li>
+
+    <li>Action
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'action'); ?>">Action</a></li>
+        <li><a href="<?php echo $this->url(array(), 'action-create'); ?>">Create New Action</a></li>
+      </ul>
+    </li>
+    <li>User
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'user'); ?>">User</a></li>
+        <li><a href="<?php echo $this->url(array(), 'user-create'); ?>">Create New User</a></li>
+      </ul>
+    </li>
+    <li>Roles
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'role'); ?>">Role</a></li>
+        <li><a href="<?php echo $this->url(array(), 'role-create'); ?>">New Role</a></li>
+      </ul>
+    </li>
+
+    <li>Rules
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'rule'); ?>">Rule</a></li>
+      </ul>
+    </li>
+
+    <li>Function Tests
+      <ul>
+        <li><a href="<?php echo $this->url(array(), 'function-tests'); ?>">Function Tests</a></li>
+        <li><a href="<?php echo $this->url(array(), 'functionTest-create'); ?>">New Function Tests</a></li>
+        <li><a href="<?php echo $this->url(array(), 'functionTest-execute'); ?>">Execute Function
+            Tests</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <h3>zum Frontend</h3>
+  <ul>
+    <li><a href="<?php echo $this->url(array(), '/'); ?>">Frontend-Bereich</a></li>
+  </ul>
+
+</div>
+

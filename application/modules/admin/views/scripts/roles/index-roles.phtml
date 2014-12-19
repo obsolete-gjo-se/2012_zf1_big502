@@ -1,0 +1,47 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Roles</h1>
+      </div>
+
+      <div class="content">
+        <table><?php if (count($this->roles)) { ?>
+            <thead>
+            <tr>
+              <th>Role</th>
+              <th>Parent Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                            <?php foreach ($this->roles as $role) { ?>
+                                <tr>
+              <td>
+                <?php echo $role->name?>
+              </td>
+              <td>
+                                        <?php if($role->parent !== null) {?>
+                                            <?php echo $role->parent->name?>
+                                        <?php } else {?>
+                                        -
+                                        <?php } ?>
+                                    </td>
+              <td>
+                <ul>
+                  <li><a href="<?php echo $this->url(array(), 'role-update'). '/' . $role->id ?>">Update</a></li>
+                  <li><a href="<?php echo $this->url(array(), 'role-delete'). '/' . $role->id ?>">Delete</a></li>
+                  <li><a href="<?php echo $this->url(array(), 'role-rules'). '/' . $role->id ?>">Rules</a></li>                  
+                </ul>
+              </td>
+            </tr>
+                            <?php } ?>
+                        </tbody>
+                    <?php } ?>
+                </table>
+
+      </div>
+    </div>
+  </div>
+</div>

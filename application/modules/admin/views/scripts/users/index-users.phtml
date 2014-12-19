@@ -1,0 +1,57 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Users</h1>
+      </div>
+      <div class="content">
+        <table><?php if (count($this->users)) { ?>
+           <thead>
+            <tr>
+              <th>ID</th>
+              <th>Firstname</th>
+              <th>Surname</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Provider</th>
+              <th>Roles</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody><?php foreach ($this->users as $user) { ?>
+            <tr>
+              <td>
+                <?php echo $user->id; ?>
+              </td>
+              <td>
+                <?php echo $user->firstname; ?>
+              </td>
+              <td>
+                <?php echo $user->surname; ?>
+              </td>
+              <td>
+                <?php echo $user->email; ?>
+              </td>
+              <td>
+                <?php echo $user->password; ?>
+              </td>
+              <td>
+                <?php echo $user->provider->name; ?>
+              </td>
+              <td> <?php foreach ($user->roles as $role) { ?>
+                        <?php echo $role->name; }?>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="<?php echo $this->url(array(), 'user-update') . '/' . $user->id; ?>">Update</a></li>
+                  <li><a href="<?php echo $this->url(array(), 'user-delete') . '/' . $user->id; ?>">Delete</a></li>
+                </ul>
+              </td>
+            </tr><?php } ?>
+          </tbody><?php } ?>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

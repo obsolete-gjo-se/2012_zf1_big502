@@ -1,0 +1,59 @@
+<div class="inner-form">
+  <div class="box box-100">
+    <div class="boxin">
+      <div class="header">
+        <h1>Controllers</h1>
+      </div>
+
+      <div class="content">
+        <table>
+                    <?php if (count($this->controllers)) { ?>
+                    	<thead>
+            <tr>
+              <th>ID</th>
+              <th>Module</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Active on <br />production
+              </th>
+              <th>Active on <br />development
+              </th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                            <?php foreach ($this->controllers as $controller) { ?>
+                                <tr>
+              <td><?php echo $controller->id ?></td>
+              <td><?php echo $controller->module ?></td>
+              <td><?php echo $controller->name ?></td>
+              <td><?php echo $controller->description ?></td>
+              <td><?php echo $this->tickHelper($controller->activeOnProduction) ?></td>
+              <td><?php echo $this->tickHelper($controller->activeOnDev) ?></td>
+              <td class="tc last">
+                <ul class="actions">
+                  <li><a
+                    href="<?php echo $this->url(array(), 'controller-toggle'). '/prod/' . $controller->id ?>">Production</a></li>
+                  <li><a
+                    href="<?php echo $this->url(array(), 'controller-toggle'). '/dev/' . $controller->id ?>">Development</a></li>
+                  <li><a
+                    href="<?php echo $this->url(array(), 'controller-update'). '/' . $controller->id ?>">Update</a></li>
+                  <li><a
+                    href="<?php echo $this->url(array(), 'controller-delete'). '/' . $controller->id ?>">Delete</a></li>
+                </ul>
+              </td>
+            </tr>
+                            <?php } ?>
+                        </tbody>
+                    <?php } ?>
+                </table>
+                <?php
+                // echo $this->paginationControl($this->flags,
+                // 'Sliding',
+                // 'partials/pagination.phtml');
+                ?>
+            </div>
+    </div>
+  </div>
+</div>

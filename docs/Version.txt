@@ -1,0 +1,31 @@
+###################
+	501
+###################
+
+- vHosts anlegen
+- Projektstruktur anlegen
+- Projektstruktur sichern
+- Libraries inlcudieren
+- Datenbank anlegen
+- Datenbank sichern
+- admin Module
+	- Entities anlegen
+	- Controllers anlegen
+	- Actions anlegen
+	- Views anlegen
+- Zend_Auth
+- Zend_Acl
+
+###################
+	502
+###################
+(Beginn: 29/05/12)
+
+- Komplettumstellung auf utf-8
+- Funktionstests (iMacros)
+
+- danach Versionierung auf 03
+
+- Cleancode
+- Refactoring
+- Unittests 

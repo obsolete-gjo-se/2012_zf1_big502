@@ -1,0 +1,12 @@
+/**
+ * Zentrale Stylesheet
+ * @lastmodified    $Date: 04/02/11, 06:10
+ */
+
+@IMPORT url(yaml/base.css);
+@IMPORT url(screen/basemod.css);
+/* @IMPORT url(screen/basemod_fullheight.css); */
+@IMPORT url(screen/content.css);
+@IMPORT url(screen/forms.css);
+@IMPORT url(screen/nav.css);
+@IMPORT url(print/print.css);
